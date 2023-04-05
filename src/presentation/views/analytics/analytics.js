@@ -14,11 +14,15 @@ import { getRequest } from "../../../data/data-source/remote";
 import { DASHBOARD_ANALYTICS } from "../../../core/consts";
 import { InfinitySpin } from  'react-loader-spinner'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function Analytics(props) {
 const [analyticsData, setanalyticsData] = useState({});
-const REFRESH_MS=2000;
+const REFRESH_MS = 2000;
+const makeToast = () => toast("Data Updated!",{autoClose : 500},);
+
 useEffect(() => {
     const interval = setInterval(() => {
         getRequest(DASHBOARD_ANALYTICS).then((analyticsData)=>{
@@ -34,6 +38,7 @@ return (
 <div>
    {analyticsData.cloud_avg ? (
    <div className="analytics">
+            <ToastContainer />
       <div className="left-pane">
          <img className="logo" src={logo}></img>
          <div className="left-pane-tab selected">
@@ -76,7 +81,7 @@ return (
             </div>
             <div className="row-1-card spacer card-common">
                <div className="card-flex">
-                  <img className="card-icon" src={icTime}></img>
+                  <img className="card-icon" src={icTimeAlt}></img>
                   <div className="card-header">
                      <p className="card-title">Cloud</p>
                      <p className="card-subtitle">Latency Average</p>
@@ -89,7 +94,7 @@ return (
             </div>
             <div className="row-1-card card-common">
                <div className="card-flex">
-                  <img className="card-icon" src={icTime}></img>
+                  <img className="card-icon" src={icTimeAlt}></img>
                   <div className="card-header">
                      <p className="card-title">Edge</p>
                      <p className="card-subtitle">Latency Average</p>

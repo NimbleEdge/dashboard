@@ -12,8 +12,8 @@ import { useState, useEffect } from "react";
      var temp=[];
       for(var index = 0;index<20;index++){
         temp.push({
-          cloud:cloud_metric[cloud_metric.length - 20 + index]["Inference"]/1000,
-          edge:edge_metric[edge_metric.length - 20 + index]["Inference"]/1000,
+          cloud:cloud_metric[cloud_metric.length - 20 + index]["uTime"]/1000,
+          edge:edge_metric[edge_metric.length - 20 + index]["uTime"]/1000,
           unit:"Millis "
         })
       }
