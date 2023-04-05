@@ -1,38 +1,198 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+  --clr-primary: black;
+  --clr-bg: white;
+  --clr-fade: #6C6C6C;
+  --clr-accent: #6565FF;
+
+  --fs-xl: clamp(3.5rem, 3vw, 12rem);
+  --fs-heading: 1.75rem;
+  --fs-body: 1rem;
+  --fs-body2: 0.8rem;
+}
+
+* {
+  margin: 0px;
+  /* background-color: var(--clr-bg); */
+  font-family: "Roboto";
+}
+
+body {
+  padding: 0px 52px;
+  background-color: var(--clr-bg);
+}
+
+.Terminal-code {
+  color: #ffffff;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.body {
+  margin: 0 auto;
+  max-width: 50rem;
+  padding: 6.25rem 17%;
+}
+
+/* FONTS */
+
+.tab-text{
+  /* color: var(--clr-fade); */
+
+}
+
+.page-title {
+  font-size: var(--fs-heading);
+  color: var(--clr-primary);
+  margin-bottom: 0.4rem;
+  /* font-weight: 500; */
+}
+
+.page-subtitle {
+  margin-bottom: 1.6rem;
+  font-size: var(--fs-body);
+  color: var(--clr-fade);
+    margin-bottom: 48px;
+}
+
+.card-subtitle {
+  font-size: var(--fs-body2);
+  color: var(--clr-primary);
+  font-weight: 300;
+}
+
+.selected {
+  font-size: var(--fs-body);
+  color: var(--clr-bg);
+  font-weight: 500;
+}
+
+.card-1-main {
+  font-size: var(--fs-xl);
+  color: var(--clr-primary);
+  font-weight: 500;
+}
+
+.ms{
   text-align: center;
+  color: var(--clr-fade);
+  font-size: var(--fs-body2);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo{
+  margin-bottom: 48px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Cards */
+
+.card-common{
+box-shadow: 0px 0px 24px rgba(149, 157, 165, 0.2);
+border-radius: 20px;
+padding: 20px 24px ;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.row-1-card{
+width: 240px;
+aspect-ratio: 1;
+position: relative;
+}
+
+/* Main */
+.analytics{
   display: flex;
-  flex-direction: column;
+}
+
+.left-pane{
+  padding: 60px 0;
+}
+
+.divider{
+width: 1px;
+height: 150vh;
+margin: 0 52px;
+
+background: rgba(0, 0, 0, 0.1);
+}
+
+.right-pane{
+  padding: 60px 0;
+}
+
+.row-1{
+  display: flex;
+  margin-bottom: 32px;
+}
+
+.card-flex{
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
 }
 
-.App-link {
-  color: #61dafb;
+.card-icon{
+  margin-right: 16px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.absolute-center{
+  position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+}
+
+.row-2{
+  display: flex;
+  margin-bottom: 32px;
+}
+
+.row-2-card{
+  height: 334px;
+  flex-grow: 1;
+}
+
+.expand-child{
+  flex:0 0 auto;
+}
+
+.row-3-card{
+  height: 400px;
+}
+
+.bar-graph{
+  width: 784px;
+}
+
+.spacer{
+  margin-right: 32px;
+}
+
+.left-pane-tab{
+  display: flex;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.selected{
+  background-color: var(--clr-accent);
+  width: 200px;
+}
+
+.tab-icon{
+  margin-right: 12px;
+}
+
+/* Charts */
+
+.meter-chart{
+  position: absolute;
+}
+
+.absolute-text{
+  position: absolute;
 }
