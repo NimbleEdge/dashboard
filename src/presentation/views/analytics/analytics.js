@@ -14,14 +14,10 @@ import { getRequest } from "../../../data/data-source/remote";
 import { DASHBOARD_ANALYTICS } from "../../../core/consts";
 import { InfinitySpin } from  'react-loader-spinner'
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
 
 function Analytics(props) {
 const [analyticsData, setanalyticsData] = useState({});
 const REFRESH_MS = 2000;
-const makeToast = () => toast("Data Updated!",{autoClose : 500},);
 
 useEffect(() => {
     const interval = setInterval(() => {
@@ -38,7 +34,6 @@ return (
 <div>
    {analyticsData.cloud_avg ? (
    <div className="analytics">
-            <ToastContainer />
       <div className="left-pane">
          <img className="logo" src={logo}></img>
          <div className="left-pane-tab selected">
@@ -67,7 +62,10 @@ return (
                      <p className="card-subtitle">API Calls</p>
                   </div>
                </div>
-               <p className="card-1-main absolute-center">{analyticsData["cloud_count"]}</p>
+               <div className="absolute-center">
+               <p className="card-1-main">{analyticsData["cloud_count"]}</p>
+               <p className="ms">api calls</p>
+               </div>
             </div>
             <div className="row-1-card spacer card-common">
                <div className="card-flex">
@@ -77,8 +75,11 @@ return (
                      <p className="card-subtitle">API Calls</p>
                   </div>
                </div>
-               <p className="card-1-main absolute-center">{analyticsData["edge_count"]}</p>
-            </div>
+               <div className="absolute-center">
+               <p className="card-1-main">{analyticsData["edge_count"]}</p>
+               <p className="ms">api calls</p>
+               </div>            
+               </div>
             <div className="row-1-card spacer card-common">
                <div className="card-flex">
                   <img className="card-icon" src={icTimeAlt}></img>

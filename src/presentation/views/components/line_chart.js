@@ -38,8 +38,8 @@ import { useState, useEffect } from "react";
           <YAxis unit=" millls" width={100} />
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey="edge" stroke="#8884d8" activeDot={{ r: 8 }} />
-          <Line type="monotone" dataKey="cloud" stroke="#82ca9d" />
+          <Line type="monotone" dataKey="edge" stroke="#8884d8" strokeWidth={2} activeDot={{ r: 4 }} />
+          <Line type="monotone" dataKey="cloud" stroke="#82ca9d" strokeWidth={2} />
         </LineChart>
       </ResponsiveContainer>
     );
