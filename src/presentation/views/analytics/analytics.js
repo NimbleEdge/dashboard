@@ -3,6 +3,7 @@ import icApiCalls from "../../../assets/icons/ic_api_calls.svg";
 import icCost from "../../../assets/icons/ic_cost.svg";
 import icDashboard from "../../../assets/icons/ic_dashboard.svg";
 import icTime from "../../../assets/icons/ic_time.svg";
+import icTimeAlt from "../../../assets/icons/ic_time_alt.svg";
 import icPlaceholder from "../../../assets/icons/ic_placeholder.svg";
 import { LineChart } from "recharts";
 import AnalyticsLineChart from "../components/line_chart";
@@ -11,6 +12,8 @@ import AnalyticsBarChart from "../components/bar_chart";
 import { useState, useEffect } from "react";
 import { getRequest } from "../../../data/data-source/remote";
 import { DASHBOARD_ANALYTICS } from "../../../core/consts";
+
+
 function Analytics(props) {
 const [analyticsData, setanalyticsData] = useState({});
 useEffect(() => {
@@ -72,7 +75,7 @@ return (
                   </div>
                </div>
                <div className="absolute-center">
-               <p className="card-1-main">{analyticsData["cloud_avg"]}</p>
+               <p className="card-1-main">{analyticsData["cloud_avg"]/1000}</p>
                <p className="ms">milliseconds</p>
                </div>
             </div>
@@ -85,7 +88,7 @@ return (
                   </div>
                </div>
                <div className="absolute-center">
-               <p className="card-1-main">{analyticsData["edge_avg"]}</p>
+               <p className="card-1-main">{analyticsData["edge_avg"]/1000}</p>
                 <p className="ms">milliseconds</p>
                </div>
             </div>
@@ -134,9 +137,10 @@ return (
       </div>
    </div>
    ) : 
-   <p>Loading...</p>
+   <p className="loading">Loading...</p>
    }
 </div>
 );
 }
+
 export default Analytics;

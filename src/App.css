@@ -14,7 +14,6 @@
 
 * {
   margin: 0px;
-  /* background-color: var(--clr-bg); */
   font-family: "Roboto";
 }
 
@@ -40,11 +39,6 @@ a {
 }
 
 /* FONTS */
-
-.tab-text{
-  /* color: var(--clr-fade); */
-
-}
 
 .page-title {
   font-size: var(--fs-heading);
@@ -195,4 +189,11 @@ transform: translate(-50%,-50%);
 
 .absolute-text{
   position: absolute;
+}
+
+.loading{
+  position: absolute;
+  top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
 }
