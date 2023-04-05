@@ -12,6 +12,8 @@ import AnalyticsBarChart from "../components/bar_chart";
 import { useState, useEffect } from "react";
 import { getRequest } from "../../../data/data-source/remote";
 import { DASHBOARD_ANALYTICS } from "../../../core/consts";
+import { InfinitySpin } from  'react-loader-spinner'
+
 
 
 function Analytics(props) {
@@ -149,7 +151,12 @@ return (
       </div>
    </div>
    ) : 
-   <p className="loading">Loading...</p>
+   <div className="loading">
+    <InfinitySpin 
+  width='200'
+  color="#6565FF"
+/>
+   </div>
    }
 </div>
 );
