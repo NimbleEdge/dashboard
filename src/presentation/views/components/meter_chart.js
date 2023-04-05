@@ -4,13 +4,13 @@ import { PieChart, Pie, Cell } from 'recharts';
 
 const RADIAN = Math.PI / 180;
 const data = [
-  { name: 'A', value: 55.22, color: '#6565FF' },
+  { name: 'A', value: 40, color: '#6565FF' },
 ];
 const cx = 150;
 const cy = 200;
 const iR = 50;
 const oR = 100;
-const value = 30;
+const value = 16;
 
 const needle = (value, data, cx, cy, iR, oR, color) => {
   let total = 0;
@@ -42,7 +42,7 @@ const needle = (value, data, cx, cy, iR, oR, color) => {
       <div>
         <PieChart width={300} height={500}>
         <Pie
-        label="55.22%"
+        label="40%"
           dataKey="value"
           startAngle={180}
           endAngle={0}

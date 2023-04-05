@@ -1,5 +1,5 @@
 import axios from "axios";
-var URI = "http://43.205.11.213/dla/api/";
+var URI = "https://metrics.nimbleedge-staging.com/dla/api/";
 
 export async function postRequest(endpoint, params) {
   var response = await axios.post(`${URI}${endpoint}`, params);

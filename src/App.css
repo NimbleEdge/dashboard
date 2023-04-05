@@ -72,6 +72,13 @@ a {
   font-weight: 500;
 }
 
+.card-2-main {
+  font-size: var(--fs-body2);
+  color: var(--clr-fade);
+  font-weight: 300;
+  margin-top: 20px;
+}
+
 .ms{
   text-align: center;
   color: var(--clr-fade);
@@ -80,6 +87,10 @@ a {
 
 .logo{
   margin-bottom: 48px;
+}
+
+.highlight{
+  font-weight: 500;
 }
 
 /* Cards */

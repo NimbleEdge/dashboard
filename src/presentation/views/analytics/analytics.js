@@ -16,12 +16,18 @@ import { DASHBOARD_ANALYTICS } from "../../../core/consts";
 
 function Analytics(props) {
 const [analyticsData, setanalyticsData] = useState({});
+const REFRESH_MS=2000;
 useEffect(() => {
-getRequest(DASHBOARD_ANALYTICS).then((analyticsData)=>{
-console.log(analyticsData);        
-setanalyticsData(analyticsData)
-});
-}, []);
+    const interval = setInterval(() => {
+        getRequest(DASHBOARD_ANALYTICS).then((analyticsData)=>{
+            console.log("new api call");        
+            setanalyticsData(analyticsData);
+            // makeToast();
+            });}, REFRESH_MS);
+  
+    return () => clearInterval(interval); // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
+  }, [])
+
 return (
 <div>
    {analyticsData.cloud_avg ? (
@@ -75,7 +81,7 @@ return (
                   </div>
                </div>
                <div className="absolute-center">
-               <p className="card-1-main">{analyticsData["cloud_avg"]/1000}</p>
+               <p className="card-1-main">{Number(analyticsData["cloud_avg"]/1000).toFixed(2)}</p>
                <p className="ms">milliseconds</p>
                </div>
             </div>
@@ -88,7 +94,7 @@ return (
                   </div>
                </div>
                <div className="absolute-center">
-               <p className="card-1-main">{analyticsData["edge_avg"]/1000}</p>
+               <p className="card-1-main">{Number(analyticsData["edge_avg"]/1000).toFixed(2)}</p>
                 <p className="ms">milliseconds</p>
                </div>
             </div>
@@ -102,8 +108,11 @@ return (
                      <p className="card-subtitle">Cloud v/s Edge</p>
                   </div>
                </div>
-               <p className="card-2-main bar-graph"></p>
-               <AnalyticsBarChart></AnalyticsBarChart>
+               <p className="bar-graph"></p>
+               <AnalyticsBarChart
+               cloudCost = {1.34 * analyticsData["cloud_count"]}
+               edgeCost = {1.34 * 0.6 * analyticsData["edge_count"]}
+               ></AnalyticsBarChart>
             </div>
             <div className="row-2-card card-common">
                <div className="card-flex expand-child">
@@ -113,7 +122,10 @@ return (
                      <p className="card-subtitle">Cloud v/s Edge</p>
                   </div>
                </div>
-               <p className="card-2-main"></p>
+               <div className="card-2-main">
+               <p className="">• Server cost: <span className="highlight">1.34 Cents / hit</span></p>
+               <p className="">• Edge cost: <span className="highlight">0.80 Cents / hit</span></p>
+               </div>
                <MeterChart className="meter-chart"></MeterChart>
             </div>
 

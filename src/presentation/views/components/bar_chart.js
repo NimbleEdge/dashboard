@@ -12,18 +12,19 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
-const data = [
-  {
-    name:'Per Hit',
-    cloud: 1.34,
-    edge: 1.34*0.6,
-    amt: 1400,
-  },
 
-];
+  function AnalyticsBarChart(props) {
 
+    const data = [
+      {
+        name:'Total',
+        cloud: (props.cloudCost/100).toFixed(2),
+        edge: (props.edgeCost/100).toFixed(2),
+        amt: 1400,
+      },
+    
+    ];
 
-  function AnalyticsBarChart() {
     return (
       <ResponsiveContainer debounce={300} width="100%" height="100%">
         <ComposedChart
@@ -38,7 +39,7 @@ const data = [
           }}
         >
           <CartesianGrid stroke="#f5f5f5" />
-          <XAxis type="number" unit=" cent" />
+          <XAxis type="number" unit="  USD" />
           <YAxis dataKey="name" type="category" scale="band" />
           <Tooltip />
           <Legend />
