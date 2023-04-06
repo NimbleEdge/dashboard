@@ -107,8 +107,8 @@ return (
                   </div>
                </div>
                <div className="card-2-main">
-               <p className="">• Cloud cost: <span className="highlight">1.34 Cents / recommendation</span></p>
-               <p className="">• NimbleEdge cost: <span className="highlight">0.80 Cents / recommendation</span></p>
+               <p className="">• Cloud cost: <span className="highlight">1.34 cents / recommendation</span></p>
+               <p className="">• NimbleEdge cost: <span className="highlight">0.80 cents / recommendation</span></p>
                </div>
                <MeterChart className="meter-chart"></MeterChart>
             </div>
