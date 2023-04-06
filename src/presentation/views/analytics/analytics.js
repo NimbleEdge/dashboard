@@ -146,7 +146,7 @@ return (
          <div className="row-3">
             <div className="row-3-card card-common">
                <div className="card-flex">
-                  <img className="card-icon" src={icTime}></img>
+                  <img className="card-icon" src={icTimeAlt}></img>
                   <div className="card-header">
                      <p className="card-title">Latency comparison</p>
                      <p className="card-subtitle">Cloud v/s NimbleEdge</p>

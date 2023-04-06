@@ -12,8 +12,8 @@ import { useState, useEffect } from "react";
      var temp=[];
       for(var index = 0;index<20;index++){
         temp.push({
-          cloud:cloud_metric[cloud_metric.length - 20 + index]["uTime"]/1000,
-          edge:edge_metric[edge_metric.length - 20 + index]["uTime"]/1000,
+          Cloud:cloud_metric[cloud_metric.length - 20 + index]["uTime"]/1000,
+          NimbleEdge:edge_metric[edge_metric.length - 20 + index]["uTime"]/1000,
           unit:"Millis "
         })
       }
@@ -38,8 +38,8 @@ import { useState, useEffect } from "react";
           <YAxis unit=" millls" width={100} />
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey="edge" stroke="#8884d8" strokeWidth={3} activeDot={{ r: 4 }} />
-          <Line type="monotone" dataKey="cloud" stroke="#82ca9d" strokeWidth={3} />
+          <Line type="monotone" dataKey="NimbleEdge" stroke="#F3AD84" strokeWidth={3} activeDot={{ r: 4 }} />
+          <Line type="monotone" dataKey="Cloud" stroke="#343441" strokeWidth={3} />
         </LineChart>
       </ResponsiveContainer>
     );

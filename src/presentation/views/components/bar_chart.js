@@ -18,8 +18,8 @@ import {
     const data = [
       {
         name:'Total',
-        cloud: (props.cloudCost/100).toFixed(2),
-        edge: (props.edgeCost/100).toFixed(2),
+        Cloud: (props.cloudCost/100).toFixed(2),
+        NimbleEdge: (props.edgeCost/100).toFixed(2),
         amt: 1400,
       },
     
@@ -43,8 +43,8 @@ import {
           <YAxis dataKey="name" type="category" scale="band" />
           <Tooltip />
           <Legend />
-          <Bar dataKey="cloud" barSize={20} fill="#343441" />
-          <Bar dataKey="edge" barSize={20} fill="#8884d8" />
+          <Bar dataKey="Cloud" barSize={20} fill="#343441" />
+          <Bar dataKey="NimbleEdge" barSize={20} fill="#8884d8" />
         </ComposedChart>
       </ResponsiveContainer>
     );
