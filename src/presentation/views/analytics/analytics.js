@@ -67,11 +67,12 @@ return (
                <p className="ms">api calls</p>
                </div>
             </div>
-            <div className="row-1-card spacer card-common">
+
+            <div className="row-1-card card-common">
                <div className="card-flex">
                   <img className="card-icon" src={icApiCalls}></img>
                   <div className="card-header">
-                     <p className="card-title">Edge</p>
+                     <p className="card-title">NimbleEdge</p>
                      <p className="card-subtitle">API Calls</p>
                   </div>
                </div>
@@ -79,8 +80,42 @@ return (
                <p className="card-1-main">{analyticsData["edge_count"]}</p>
                <p className="ms">api calls</p>
                </div>            
+            </div>
+         </div>
+         <div className="row-2">
+            <div className="row-2-card spacer card-common">
+               <div className="card-flex">
+                  <img className="card-icon" src={icCost}></img>
+                  <div className="card-header">
+                     <p className="card-title">Cost comparison</p>
+                     <p className="card-subtitle">Cloud v/s NimbleEdge</p>
+                  </div>
                </div>
-            <div className="row-1-card spacer card-common">
+               <p className="bar-graph"></p>
+               <AnalyticsBarChart
+               cloudCost = {1.34 * analyticsData["cloud_count"]}
+               edgeCost = {1.34 * 0.6 * analyticsData["edge_count"]}
+               ></AnalyticsBarChart>
+            </div>
+
+            <div className="row-2-card card-common">
+               <div className="card-flex expand-child">
+                  <img className="card-icon" src={icCost}></img>
+                  <div className="card-header">
+                     <p className="card-title">Savings Percentage</p>
+                     <p className="card-subtitle">Cloud v/s NimbleEdge</p>
+                  </div>
+               </div>
+               <div className="card-2-main">
+               <p className="">• Cloud cost: <span className="highlight">1.34 Cents / recommendation</span></p>
+               <p className="">• NimbleEdge cost: <span className="highlight">0.80 Cents / recommendation</span></p>
+               </div>
+               <MeterChart className="meter-chart"></MeterChart>
+            </div>
+         </div>
+
+        <div className="row-25 row-2">
+        <div className="row-1-card spacer card-common">
                <div className="card-flex">
                   <img className="card-icon" src={icTimeAlt}></img>
                   <div className="card-header">
@@ -97,7 +132,7 @@ return (
                <div className="card-flex">
                   <img className="card-icon" src={icTimeAlt}></img>
                   <div className="card-header">
-                     <p className="card-title">Edge</p>
+                     <p className="card-title">NimbleEdge</p>
                      <p className="card-subtitle">Latency Average</p>
                   </div>
                </div>
@@ -106,45 +141,15 @@ return (
                 <p className="ms">milliseconds</p>
                </div>
             </div>
-         </div>
-         <div className="row-2">
-            <div className="row-2-card spacer card-common">
-               <div className="card-flex">
-                  <img className="card-icon" src={icCost}></img>
-                  <div className="card-header">
-                     <p className="card-title">Cost Comparision</p>
-                     <p className="card-subtitle">Cloud v/s Edge</p>
-                  </div>
-               </div>
-               <p className="bar-graph"></p>
-               <AnalyticsBarChart
-               cloudCost = {1.34 * analyticsData["cloud_count"]}
-               edgeCost = {1.34 * 0.6 * analyticsData["edge_count"]}
-               ></AnalyticsBarChart>
-            </div>
-            <div className="row-2-card card-common">
-               <div className="card-flex expand-child">
-                  <img className="card-icon" src={icCost}></img>
-                  <div className="card-header">
-                     <p className="card-title">Savings Percentage</p>
-                     <p className="card-subtitle">Cloud v/s Edge</p>
-                  </div>
-               </div>
-               <div className="card-2-main">
-               <p className="">• Server cost: <span className="highlight">1.34 Cents / hit</span></p>
-               <p className="">• Edge cost: <span className="highlight">0.80 Cents / hit</span></p>
-               </div>
-               <MeterChart className="meter-chart"></MeterChart>
-            </div>
+        </div>
 
-         </div>
          <div className="row-3">
             <div className="row-3-card card-common">
                <div className="card-flex">
                   <img className="card-icon" src={icTime}></img>
                   <div className="card-header">
-                     <p className="card-title">Latency Comparision</p>
-                     <p className="card-subtitle">Cloud v/s Edge</p>
+                     <p className="card-title">Latency comparison</p>
+                     <p className="card-subtitle">Cloud v/s NimbleEdge</p>
                   </div>
                </div>
                <div className="card-3-main"></div>

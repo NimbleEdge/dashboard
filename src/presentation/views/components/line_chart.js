@@ -33,13 +33,13 @@ import { useState, useEffect } from "react";
             bottom: 64,
           }}
         >
-          <CartesianGrid strokeDasharray="3 3" />
+          {/* <CartesianGrid strokeDasharray="3 3" /> */}
           <XAxis dataKey="name" />
           <YAxis unit=" millls" width={100} />
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey="edge" stroke="#8884d8" strokeWidth={2} activeDot={{ r: 4 }} />
-          <Line type="monotone" dataKey="cloud" stroke="#82ca9d" strokeWidth={2} />
+          <Line type="monotone" dataKey="edge" stroke="#8884d8" strokeWidth={3} activeDot={{ r: 4 }} />
+          <Line type="monotone" dataKey="cloud" stroke="#82ca9d" strokeWidth={3} />
         </LineChart>
       </ResponsiveContainer>
     );
