@@ -13,11 +13,21 @@ import { useState, useEffect } from "react";
 import { getRequest } from "../../../data/data-source/remote";
 import { DASHBOARD_ANALYTICS } from "../../../core/consts";
 import { InfinitySpin } from  'react-loader-spinner'
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Analytics(props) {
 const [analyticsData, setanalyticsData] = useState({});
 const REFRESH_MS = 2000;
+
+const toastOptions = {
+   position: "bottom-right",
+   autoClose: 8000,
+   pauseOnHover: true,
+   draggable: true,
+   theme: "dark",
+ };
+
 
 useEffect(() => {
     const interval = setInterval(() => {
@@ -25,7 +35,9 @@ useEffect(() => {
             console.log("new api call");        
             setanalyticsData(analyticsData);
             // makeToast();
-            });}, REFRESH_MS);
+            toast.success('New data fetched!',toastOptions)
+            });
+         }, REFRESH_MS);
   
     return () => clearInterval(interval); // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
   }, [])
